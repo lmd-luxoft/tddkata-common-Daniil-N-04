@@ -27,4 +27,29 @@ public class CalcTest {
         int expected = 2;
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void test_sum_negative_1() {
+        Calc calc = new Calc();
+        int actual = calc.sum("1 3");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_sum_negative_2() {
+        Calc calc = new Calc();
+        int actual = calc.sum("один");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_sum_negative_3() {
+        Calc calc = new Calc();
+        int actual = calc.sum("1");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
 }

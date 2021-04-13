@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 public class CalcTest {
 
     @Test
-    public void test_sum() {
+    public void emptyExpression() {
         Calc calc = new Calc();
         int actual = calc.sum("");
         int expected = 0;
@@ -13,7 +13,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum1_2() {
+    public void sum_twoNumbers1() {
         Calc calc = new Calc();
         int actual = calc.sum("1,2");
         int expected = 3;
@@ -21,7 +21,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum1_1() {
+    public void sum_twoNumbers2() {
         Calc calc = new Calc();
         int actual = calc.sum("1,1");
         int expected = 2;
@@ -29,7 +29,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum1_3() {
+    public void sum_threeNumbers() {
         Calc calc = new Calc();
         int actual = calc.sum("1,1,5");
         int expected = 7;
@@ -37,7 +37,15 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum_negative_1() {
+    public void sum_twoRealNumbers() {
+        Calc calc = new Calc();
+        int actual = calc.sum("1.1,2.6");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sum_twoNumbers_negative() {
         Calc calc = new Calc();
         int actual = calc.sum("1 3");
         int expected = -1;
@@ -45,7 +53,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum_negative_2() {
+    public void invalidExpression1() {
         Calc calc = new Calc();
         int actual = calc.sum("один");
         int expected = -1;
@@ -53,7 +61,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum_negative_3() {
+    public void invalidExpression2() {
         Calc calc = new Calc();
         int actual = calc.sum("1");
         int expected = -1;
@@ -61,7 +69,7 @@ public class CalcTest {
     }
 
     @Test
-    public void test_sum_negative_4() {
+    public void nullExpression() {
         Calc calc = new Calc();
         int actual = calc.sum(null);
         int expected = -1;

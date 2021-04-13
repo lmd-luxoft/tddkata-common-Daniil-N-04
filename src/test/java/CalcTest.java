@@ -52,4 +52,12 @@ public class CalcTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void test_sum_negative_4() {
+        Calc calc = new Calc();
+        int actual = calc.sum(null);
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
 }

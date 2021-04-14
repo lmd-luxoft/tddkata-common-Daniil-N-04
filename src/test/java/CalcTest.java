@@ -109,9 +109,41 @@ public class CalcTest {
     }
 
     @Test
+    public void invalidExpression6() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2\n\n5");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void nullExpression() {
         Calc calc = new Calc();
         int actual = calc.sum(null);
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void newSeparator1() {
+        Calc calc = new Calc();
+        int actual = calc.sum("//;\\n1;2");
+        int expected = 3;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression7() {
+        Calc calc = new Calc();
+        int actual = calc.sum("//;\\n1\n2");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression8() {
+        Calc calc = new Calc();
+        int actual = calc.sum("//;1;2");
         int expected = -1;
         assertEquals(expected, actual);
     }

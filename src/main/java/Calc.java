@@ -14,7 +14,6 @@ public class Calc {
             return 0;
 
         String separator = getSeparator();
-
         numbers = separator.isEmpty() ? exp.split("\\,|\n") : exp.split(separator);
 
         return numbers.length == 1

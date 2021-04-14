@@ -5,6 +5,22 @@ import static org.junit.Assert.assertEquals;
 public class CalcTest {
 
     @Test
+    public void newSeparator() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2\n5");
+        int expected = 6;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void newAndOld_Separator() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2\n5,1");
+        int expected = 7;
+        assertEquals(expected, actual);
+    }
+
+    @Test
     public void emptyExpression() {
         Calc calc = new Calc();
         int actual = calc.sum("");
@@ -64,6 +80,22 @@ public class CalcTest {
     public void invalidExpression2() {
         Calc calc = new Calc();
         int actual = calc.sum("1");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression3() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2\n,5");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression4() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2,\n5");
         int expected = -1;
         assertEquals(expected, actual);
     }

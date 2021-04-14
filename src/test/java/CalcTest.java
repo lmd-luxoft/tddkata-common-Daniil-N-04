@@ -1,6 +1,7 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalcTest {
 
@@ -146,6 +147,22 @@ public class CalcTest {
         int actual = calc.sum("//;1;2");
         int expected = -1;
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression9() {
+        Calc calc = new Calc();
+        assertThrows(NumberFormatException.class
+                , () -> calc.sum("//;-1;2")
+                , "Negatives are not allowed! Negative: -1" );
+    }
+
+    @Test
+    public void invalidExpression10() {
+        Calc calc = new Calc();
+        assertThrows(NumberFormatException.class
+                , () -> calc.sum("-1;-2")
+                , "Negatives are not allowed! Negative: -1,-2" );
     }
 
 }

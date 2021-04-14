@@ -11,7 +11,7 @@ public class Calc {
         else if (expression.isEmpty())
             return 0;
 
-        numbers = expression.split("\\,");
+        numbers = expression.split("\\,|\n");
 
         return numbers.length == 1
                 ? -1

@@ -8,7 +8,7 @@ public class CalcTest {
     public void newSeparator() {
         Calc calc = new Calc();
         int actual = calc.sum("2\n5");
-        int expected = 6;
+        int expected = 7;
         assertEquals(expected, actual);
     }
 
@@ -16,7 +16,7 @@ public class CalcTest {
     public void newAndOld_Separator() {
         Calc calc = new Calc();
         int actual = calc.sum("2\n5,1");
-        int expected = 7;
+        int expected = 8;
         assertEquals(expected, actual);
     }
 
@@ -96,6 +96,14 @@ public class CalcTest {
     public void invalidExpression4() {
         Calc calc = new Calc();
         int actual = calc.sum("2,\n5");
+        int expected = -1;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invalidExpression5() {
+        Calc calc = new Calc();
+        int actual = calc.sum("2,,5");
         int expected = -1;
         assertEquals(expected, actual);
     }

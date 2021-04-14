@@ -127,7 +127,7 @@ public class CalcTest {
     @Test
     public void newSeparator1() {
         Calc calc = new Calc();
-        int actual = calc.sum("//;\\n1;2");
+        int actual = calc.sum("//;\n1;2");
         int expected = 3;
         assertEquals(expected, actual);
     }
@@ -135,7 +135,7 @@ public class CalcTest {
     @Test
     public void invalidExpression7() {
         Calc calc = new Calc();
-        int actual = calc.sum("//;\\n1\n2");
+        int actual = calc.sum("//;\n1\n2");
         int expected = -1;
         assertEquals(expected, actual);
     }
